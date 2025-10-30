@@ -4,16 +4,24 @@ import Overview from "./components/homeComponents/overview";
 import Projects from "./components/homeComponents/projects";
 import Skills from "./components/homeComponents/skills";
 import Educations from "./components/homeComponents/Educations";
+import ContactForm from "./components/homeComponents/contactForm";
 export default function Home() {
   return (
     <>
       <CoverImage />
-      <div className="px-10 mb-10">
+      <div className="w-full max-w-7xl mx-auto px-4">
         <Overview />
         <Experience />
         <Skills />
         <Projects />
         <Educations />
+        <ContactForm />
+      </div>
+      <div>
+        <hr></hr>
+        <div className="flex justify-center p-3">
+          <p>© 2025 Aman Kumar. All rights reserved.</p>
+        </div>
       </div>
     </>
   );

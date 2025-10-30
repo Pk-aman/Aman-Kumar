@@ -28,7 +28,7 @@ function CoverImage() {
         <div>
           <div className="ml-80">
             {/* Name */}
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex justify-between gap-4">
               <div className="flex-shrink-0">
                 <p className="text-7xl font-bold text-black">
                   {overviewData.name}
@@ -41,15 +41,23 @@ function CoverImage() {
                 </p>
               </div>
               {/* Social Links */}
-              <div className="flex items-center gap-3 flex-shrink-0">
-                <Link href="https://github.com/aman-kumar-007">
-                  <AiOutlineGithub className="text-3xl hover:text-gray-600 transition-colors" />
-                </Link>
-                <Link href="https://www.linkedin.com/in/aman-kumar-007/">
-                  <AiOutlineLinkedin className="text-3xl hover:text-blue-600 transition-colors" />
-                </Link>
-                <Link href="mailto:aman@gmail.com">
-                  <AiFillMail className="text-3xl hover:text-red-600 transition-colors" />
+              <div className="p-2 flex flex-col items-end">
+                <div className="flex items-center justify-between w-full">
+                  <Link href="https://github.com/Pk-aman">
+                    <AiOutlineGithub className="text-3xl hover:text-gray-600 transition-colors" />
+                  </Link>
+                  <Link href="https://www.linkedin.com/in/aman-kumar-aa59741a0/">
+                    <AiOutlineLinkedin className="text-3xl hover:text-blue-600 transition-colors" />
+                  </Link>
+                  <Link href="mailto:a.amankrpin2@gmail.com">
+                    <AiFillMail className="text-3xl hover:text-red-600 transition-colors" />
+                  </Link>
+                </div>
+                <Link
+                  href="tel:+916202440500"
+                  className="text-small text-black"
+                >
+                  +91-6202440500
                 </Link>
               </div>
             </div>
