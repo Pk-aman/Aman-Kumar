@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import coverImage from "../../assets/cover-image.jpg";
-import profileImage from "../../assets/profilePhoto.jpg";
+import coverImage from "../../assets/poster.jpg";
+import profileImage from "../../assets/pp.jpg";
 import { overviewData } from "@/app/data/data";
 import { AiOutlineGithub, AiOutlineLinkedin, AiFillMail } from "react-icons/ai";
 import Link from "next/link";
@@ -14,13 +14,13 @@ function CoverImage() {
         <Image
           src={coverImage}
           alt="Cover Image"
-          className="w-screen h-90 object-cover"
+          className="w-screen h-100 object-fill"
         />
         {/* Profile Image */}
         <Image
           src={profileImage}
           alt="Profile Image"
-          className="w-55 h-70 rounded-full shadow-lg absolute left-25 bottom-0 translate-y-1/2 p-3 bg-white"
+          className="w-55 h-70 rounded-full shadow-lg absolute left-25 bottom-0 translate-y-1/2 p-3 bg-white object-cover"
         />
       </div>
       {/* Name and Title */}
