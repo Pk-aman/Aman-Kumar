@@ -50,8 +50,8 @@ export const experienceData = [
     location: "Bhagalpur, India",
     skills: ["React", "JavaScript", "HTML", "CSS", "MySQL"],
     descriptions: [
-      "Started as a QA Intern at Hinge Health, where I built a strong foundation in both technical and non-technical skills, with hands-on experience in TypeScript and Cypress.",
-      "Automated 100+ REST API endpoints and 300+ UI test cases in a CI/CD pipeline, reducing manual validation effort from 8 hours to just 5–6 minutes, significantly improving testing efficiency and overall reliability.",
+      "Collaborated with friends to freelance during academic tenure, developing web and mobile applications using React, JavaScript, Tailwind CSS, and MySQL to support local businesses.",
+      "Utilized web view technology to efficiently convert websites into cross-platform mobile apps, maximizing reach and minimizing development time.",
     ],
   },
 ];
