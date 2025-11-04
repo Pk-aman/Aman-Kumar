@@ -1,26 +1,56 @@
 "use client";
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 function ContactForm() {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    from: "",
-    subject: "",
+    email: "",
+    name: "",
+    phone: "",
+    company: "",
+    position: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const resetForm = () => {
+    setFormData({
+      email: "",
+      name: "",
+      phone: "",
+      company: "",
+      position: "",
+      message: "",
+    });
+  };
+
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Under development");
-    // Handle form submission here
+
+    setLoading(true);
+    await fetch("/api/send", {
+      method: "POST",
+      body: JSON.stringify(formData),
+    })
+      .then((res) => {
+        toast.success("Email sent successfully");
+        resetForm();
+      })
+      .catch((err) => {
+        toast.error("Email not sent");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
@@ -33,49 +63,76 @@ function ContactForm() {
         <div>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-2">
-              <label htmlFor="from" className="text-gray-500">
-                To:
+              <label htmlFor="email" className="text-gray-500">
+                Email:
               </label>
               <input
                 type="email"
-                placeholder="To"
-                value="a.amankrpin2@gmail.com"
-                readOnly
+                placeholder="Email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="border-2 border-gray-300 rounded-full px-4 py-2"
               />
-              <label htmlFor="from" className="text-gray-500">
-                From:
+              <label htmlFor="name" className="text-gray-500">
+                Name:
               </label>
               <input
-                id="from"
-                name="from"
-                type="email"
-                placeholder="From"
-                value={formData.from}
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Name"
+                value={formData.name}
                 onChange={handleChange}
                 className="border-2 border-gray-300 rounded-full px-4 py-2"
                 required
               />
-              <label htmlFor="subject" className="text-gray-500">
-                Subject:
+              <label htmlFor="phone" className="text-gray-500">
+                Phone:
               </label>
               <input
-                id="subject"
-                name="subject"
+                id="phone"
+                name="phone"
                 type="text"
-                placeholder="Subject"
-                value={formData.subject}
+                placeholder="Phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="border-2 border-gray-300 rounded-full px-4 py-2"
+                required
+              />
+              <label htmlFor="company" className="text-gray-500">
+                Company:
+              </label>
+              <input
+                id="company"
+                name="company"
+                type="text"
+                placeholder="Company"
+                value={formData.company}
+                onChange={handleChange}
+                className="border-2 border-gray-300 rounded-full px-4 py-2"
+                required
+              />
+              <label htmlFor="position" className="text-gray-500">
+                Position:
+              </label>
+              <input
+                id="position"
+                name="position"
+                type="text"
+                placeholder="Position"
+                value={formData.position}
                 onChange={handleChange}
                 className="border-2 border-gray-300 rounded-full px-4 py-2"
                 required
               />
               <label htmlFor="message" className="text-gray-500">
-                Message:
+                Job Description:
               </label>
               <textarea
                 id="message"
                 name="message"
-                placeholder="Your message here..."
+                placeholder="Mention Experience and required skills here..."
                 value={formData.message}
                 onChange={handleChange}
                 rows={10}
@@ -86,12 +143,13 @@ function ContactForm() {
                 type="submit"
                 className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition-colors"
               >
-                Send
+                {loading ? "Sending..." : "Send"}
               </button>
             </div>
           </form>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 }
