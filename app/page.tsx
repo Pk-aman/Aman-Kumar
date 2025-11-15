@@ -5,9 +5,14 @@ import Projects from "./components/homeComponents/projects";
 import Skills from "./components/homeComponents/skills";
 import Educations from "./components/homeComponents/Educations";
 import ContactForm from "./components/homeComponents/contactForm";
+import Link from 'next/link'
 export default function Home() {
   return (
     <>
+      <div className="fixed bottom-10 w-full flex justify-center z-10">
+          <Link className="text-white bg-blue-600 px-4 py-3 rounded-full text-bold border-5 border-white shadow-xl" href='/pages/explore' >EXPLORE MORE</Link>
+      </div>
+
       <CoverImage />
       <div className="w-full max-w-7xl mx-auto px-4">
         <Overview />
@@ -16,12 +21,6 @@ export default function Home() {
         <Projects />
         <Educations />
         <ContactForm />
-      </div>
-      <div>
-        <hr></hr>
-        <div className="flex justify-center p-3">
-          <p>© 2025 Aman Kumar. All rights reserved.</p>
-        </div>
       </div>
     </>
   );

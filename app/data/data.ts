@@ -159,3 +159,14 @@ export const educationsData = [
     location: "Katihar, India",
   },
 ];
+
+export const repos = [
+  "Redux-Todo",
+  "Zustand-Todo",
+  "Aman-Kumar",
+  "Theme-Switcher",
+  "BlogWebsite",
+  "Pagination-And-Virtual-Scrolling",
+  "ZustandTodo",
+  "Currency-Convertor"
+];

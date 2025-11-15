@@ -28,6 +28,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+
+        <div className="mt-7">
+          <hr></hr>
+          <div className="flex justify-center p-3">
+            <p>© 2025 Aman Kumar. All rights reserved.</p>
+          </div>
+        </div>
       </body>
     </html>
   );
