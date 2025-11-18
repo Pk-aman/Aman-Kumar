@@ -3,7 +3,7 @@ import Image from "next/image";
 import coverImage from "../../assets/poster.jpg";
 import profileImage from "../../assets/pp.jpg";
 import { overviewData } from "@/app/data/data";
-import { AiOutlineGithub, AiOutlineLinkedin, AiFillMail } from "react-icons/ai";
+import { AiOutlineGithub, AiOutlineLinkedin, AiFillMail, AiOutlineCloudDownload, AiOutlineDownload } from "react-icons/ai";
 import Link from "next/link";
 
 function CoverImage() {
@@ -30,9 +30,14 @@ function CoverImage() {
             {/* Name */}
             <div className="flex justify-between gap-4">
               <div className="flex-shrink-0">
-                <p className="text-7xl font-bold text-black">
-                  {overviewData.name}
-                </p>
+                <div className="flex gap-3">
+                  <p className="text-7xl font-bold text-black">
+                    {overviewData.name}
+                  </p>
+                  <a href='/AmanKumar_Resume_Frontend.pdf' download>
+                  <AiOutlineDownload className="font-bold text-blue mt-3"/>
+                  </a>
+                </div>
                 <p
                   className="text-lg text-black"
                   style={{ letterSpacing: "1.05em" }}

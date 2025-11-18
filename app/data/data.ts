@@ -4,7 +4,9 @@ export const overviewData = {
   name: "AMAN KUMAR",
   title: "SOFTWARE ENGINEER",
   description:
-    "Experienced Front-End Developer skilled in React, Redux, and TypeScript, with a strong focus on scalable app architecture and robust testing. Proven ability to deliver high-quality, performant solutions across modern web stacks.",
+    `Frontend Developer with hands-on experience in building scalable, high-performance web applications using Re-
+act.js, Next.js, JavaScript (ES6+), TypeScript, Tailwind CSS, Redux, Zustand, and RESTful APIs.
+Strong focus on clean architecture, component-driven development, API integrations, and performance optimization.`,
 };
 export const experienceData = [
   {
@@ -24,8 +26,9 @@ export const experienceData = [
       "Zustand",
     ],
     descriptions: [
-      "Design and develop scalable front-end features and UI enhancements using React.js, Redux Toolkit, and Context API, while integrating data from multiple back-end services to ensure seamless user experiences.",
-      "Write and maintain unit and end-to-end test cases using Cypress, proactively debugging, and fixing issues to ensure code reliability and production stability.",
+      "Built scalable front‑end features using React.js, Redux Toolkit, and ES6+, integrating multiple RESTful APIs for seamless data flow.",
+      "Optimized UI performance using code‑splitting, memoization, and reusable component patterns while ensuring responsive and accessible layouts.",
+      "Implemented secure API communication and session handling with JWT‑based authentication and Basic Auth."
     ],
   },
   {
@@ -37,8 +40,9 @@ export const experienceData = [
     location: "Bangalore, India",
     skills: ["TypeScript", "JavaScript", "Cypress", "Jest", "React"],
     descriptions: [
-      "Started as a QA Intern at Hinge Health, where I built a strong foundation in both technical and non-technical skills, with hands-on experience in TypeScript and Cypress.",
-      "Automated 100+ REST API endpoints and 300+ UI test cases in a CI/CD pipeline, reducing manual validation effort from 8 hours to just 5–6 minutes, significantly improving testing efficiency and overall reliability.",
+      "Developed modular frontend features with TypeScript and React.js while improving API-driven workflows using async/await and optimized state management.",
+      "Worked on RESTful API integrations, enhancing data-fetching consistency with debouncing and structured component architecture.",
+      "Assisted in improving authentication and request handling using ES6+, Babel, and secure API patterns."
     ],
   },
   {
@@ -69,16 +73,18 @@ export const projectsData = [
       "Zustand",
     ],
     descriptions: [
-      "Led the migration over 20 microservices to user-service to access user data for centralization enable security and data protection.",
-      "Designed and maintained more than 15 secure REST API endpoints for user data operations, enabling seamless integration and account reconciliation",
+      "Built a centralized user-service enabling unified user data access across microservices with secure JWT/Basic Auth support.",
+      "Designed 15+ optimized RESTful API endpoints using modular service architecture and efficient SQL query patterns.",
+      "Improved system performance with connection pooling, schema design improvements, and structured request/response validation."
     ],
   },
   {
     name: "User-Service",
     skills: ["Node.js", "PostgreSQL", "TypeScript", "JavaScript", "Jest"],
     descriptions: [
-      "Rebuilt the Care-Hub application using Next.js and Zustand, improving the front-end load time by 40% and supporting more than 5,000 active users per day",
-      "Integrated 2 major APIs (GraphQL and REST), enabling real-time data access for more than 10,000 daily data transactions.",
+      "Rebuilt the Care-Hub platform using Next.js with SSR, SSG, and ISR strategies along with optimized rendering, lazy loading, and code-splitting, improving load time by 40%.",
+      "Integrated GraphQL and REST APIs to enhance data-access efficiency, supporting 10,000+ daily transactions through optimized fetch patterns, caching, and incremental updates.",
+      "Developed scalable UI components with Tailwind CSS and used Zustand for lightweight global state, combined with virtual scrolling, memoization, and bundle-size optimizations to boost runtime performance."
     ],
   },
 ];
@@ -119,6 +125,47 @@ export const skillsData = [
     experience: "2 years",
     proficiency: "Expert",
   },
+  {
+    name: "Redux",
+    experience: "2 years",
+    proficiency: "Expert",
+  },
+  {
+    name: "Node.js",
+    experience: "2 years",
+    proficiency: "Expert",
+  },
+  {
+    name: "GitHub",
+    experience: "2 years",
+    proficiency: "Expert",
+  },
+  {
+    name: "Jira",
+    experience: "2 years",
+    proficiency: "Expert",
+  },
+  {
+    name: "HTML",
+    experience: "2 years",
+    proficiency: "Expert",
+  },
+  {
+    name: "CSS",
+    experience: "2 years",
+    proficiency: "Expert",
+  },
+  {
+    name: "Jest",
+    experience: "2 years",
+    proficiency: "Expert",
+  },
+  {
+    name: "RESTful API",
+    experience: "2 years",
+    proficiency: "Expert",
+  },
+
 ];
 
 export const educationsData = [

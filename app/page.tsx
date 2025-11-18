@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <div className="fixed bottom-10 w-full flex justify-center z-10">
-          <Link className="text-white bg-blue-600 px-4 py-3 rounded-full text-bold border-5 border-white shadow-xl" href='/pages/explore' >EXPLORE MORE</Link>
+          <Link className="text-white bg-blue-600 px-4 py-3 rounded-full text-bold border-5 border-blue-700 shadow-xl" href='/pages/explore' >EXPLORE MORE</Link>
       </div>
 
       <CoverImage />

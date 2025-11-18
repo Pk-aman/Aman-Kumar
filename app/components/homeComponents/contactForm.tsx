@@ -56,11 +56,11 @@ function ContactForm() {
 
   return (
     <>
-      <div className="p-5">
+      <div className="p-5 mt-5 border rounded-3xl shadow-2xl">
         <div className="text-4xl font-bold flex justify-center items-center">
           <h1>Contact Me</h1>
         </div>
-        <div>
+        <div> 
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-2">
               <label htmlFor="email" className="text-gray-500">

@@ -4,7 +4,7 @@ import { overviewData } from "@/app/data/data";
 function Overview() {
   const renderDescription = () => {
     const text = overviewData.description;
-    const boldText = "Front-End Developer";
+    const boldText = "Frontend Developer";
     const parts = text.split(boldText);
 
     return (
