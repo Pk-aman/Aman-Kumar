@@ -32,12 +32,12 @@ function ContactForm() {
       method: "POST",
       body: JSON.stringify(formData),
     })
-      .then((res) => {
+      .then(() => {
         toast.success("Email sent successfully");
         resetForm();
       })
       .catch((err) => {
-        toast.error("Email not sent");
+        toast.error("Email not sent: ", err);
       })
       .finally(() => {
         setLoading(false);
@@ -60,7 +60,7 @@ function ContactForm() {
         <div className="text-4xl font-bold flex justify-center items-center">
           <h1>Contact Me</h1>
         </div>
-        <div> 
+        <div>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-2">
               <label htmlFor="email" className="text-gray-500">
@@ -68,7 +68,7 @@ function ContactForm() {
               </label>
               <input
                 type="email"
-                placeholder="Email"
+                placeholder="Type here ..."
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -81,7 +81,7 @@ function ContactForm() {
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Name"
+                placeholder="Type here ..."
                 value={formData.name}
                 onChange={handleChange}
                 className="border-2 border-gray-300 rounded-full px-4 py-2"
@@ -94,7 +94,7 @@ function ContactForm() {
                 id="phone"
                 name="phone"
                 type="text"
-                placeholder="Phone"
+                placeholder="Type here ..."
                 value={formData.phone}
                 onChange={handleChange}
                 className="border-2 border-gray-300 rounded-full px-4 py-2"
@@ -107,7 +107,7 @@ function ContactForm() {
                 id="company"
                 name="company"
                 type="text"
-                placeholder="Company"
+                placeholder="Type here ..."
                 value={formData.company}
                 onChange={handleChange}
                 className="border-2 border-gray-300 rounded-full px-4 py-2"
@@ -120,7 +120,7 @@ function ContactForm() {
                 id="position"
                 name="position"
                 type="text"
-                placeholder="Position"
+                placeholder="Type here ..."
                 value={formData.position}
                 onChange={handleChange}
                 className="border-2 border-gray-300 rounded-full px-4 py-2"

@@ -1,10 +1,7 @@
-import Experience from "../components/homeComponents/experience";
-
 export const overviewData = {
   name: "AMAN KUMAR",
   title: "SOFTWARE ENGINEER",
-  description:
-    `Frontend Developer with hands-on experience in building scalable, high-performance web applications using Re-
+  description: `Frontend Developer with hands-on experience in building scalable, high-performance web applications using Re-
 act.js, Next.js, JavaScript (ES6+), TypeScript, Tailwind CSS, Redux, Zustand, and RESTful APIs.
 Strong focus on clean architecture, component-driven development, API integrations, and performance optimization.`,
 };
@@ -26,9 +23,10 @@ export const experienceData = [
       "Zustand",
     ],
     descriptions: [
-      "Built scalable front‑end features using React.js, Redux Toolkit, and ES6+, integrating multiple RESTful APIs for seamless data flow.",
-      "Optimized UI performance using code‑splitting, memoization, and reusable component patterns while ensuring responsive and accessible layouts.",
-      "Implemented secure API communication and session handling with JWT‑based authentication and Basic Auth."
+      "Developed and delivered high-performance frontend features using React.js, Redux Toolkit and Zustand, improving data-loading time by 30% and increasing user engagement across web & mobile views.",
+      "Created 20+ reusable UI components following component-driven and scalable architecture, enabling faster development cycles, improved maintainability, and smoother collaboration with backend/API teams.",
+      "Optimized application performance using code-splitting, memoization and lazy loading resulting in 25% faster rendering speeds and reduced Time-to-Interactive (TTI) across multiple devices.",
+      "Collaborated with backend team to improve API workflows through debouncing, caching, and controlled fetch patterns, reducing redundant calls by 35%.",
     ],
   },
   {
@@ -40,9 +38,9 @@ export const experienceData = [
     location: "Bangalore, India",
     skills: ["TypeScript", "JavaScript", "Cypress", "Jest", "React"],
     descriptions: [
-      "Developed modular frontend features with TypeScript and React.js while improving API-driven workflows using async/await and optimized state management.",
+      "Designed modular frontend features using TypeScript & React with clean state-management patterns, reducing rendering delays and improving UI responsiveness by 22%.",
       "Worked on RESTful API integrations, enhancing data-fetching consistency with debouncing and structured component architecture.",
-      "Assisted in improving authentication and request handling using ES6+, Babel, and secure API patterns."
+      "Improved authentication and request handling using ES6+, Babel, and secured API patterns, resulting in 40% faster response handling",
     ],
   },
   {
@@ -73,9 +71,9 @@ export const projectsData = [
       "Zustand",
     ],
     descriptions: [
-      "Built a centralized user-service enabling unified user data access across microservices with secure JWT/Basic Auth support.",
+      "Built a centralized and production-ready microservice architecture for managing user data, supporting 5+ cross-functional internal services with secure JWT & Basic Auth protection.",
       "Designed 15+ optimized RESTful API endpoints using modular service architecture and efficient SQL query patterns.",
-      "Improved system performance with connection pooling, schema design improvements, and structured request/response validation."
+      "Improved system performance with connection pooling, schema design improvements, and structured request/response validation.",
     ],
   },
   {
@@ -84,7 +82,7 @@ export const projectsData = [
     descriptions: [
       "Rebuilt the Care-Hub platform using Next.js with SSR, SSG, and ISR strategies along with optimized rendering, lazy loading, and code-splitting, improving load time by 40%.",
       "Integrated GraphQL and REST APIs to enhance data-access efficiency, supporting 10,000+ daily transactions through optimized fetch patterns, caching, and incremental updates.",
-      "Developed scalable UI components with Tailwind CSS and used Zustand for lightweight global state, combined with virtual scrolling, memoization, and bundle-size optimizations to boost runtime performance."
+      "Developed scalable UI components with Tailwind CSS and used Zustand for lightweight global state, combined with virtual scrolling, memoization, and bundle-size optimizations to boost runtime performance.",
     ],
   },
 ];
@@ -165,7 +163,6 @@ export const skillsData = [
     experience: "2 years",
     proficiency: "Expert",
   },
-
 ];
 
 export const educationsData = [
@@ -215,5 +212,9 @@ export const repos = [
   "BlogWebsite",
   "Pagination-And-Virtual-Scrolling",
   "ZustandTodo",
-  "Currency-Convertor"
+  "Currency-Convertor",
+  "Tasks-Management-Application-Frontend",
+  "Tasks-Management-Application-Backend",
+  "AI-Test",
+  "Perfume-Website",
 ];
