@@ -1,5 +1,5 @@
-export type ProjectCardDetails = {
+export interface ProjectCardDetails {
   name: string;
   description: string;
   html_url: string;
-};
+}

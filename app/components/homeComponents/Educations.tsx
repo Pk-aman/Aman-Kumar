@@ -1,102 +1,188 @@
 "use client";
 import React, { useState } from "react";
 import { educationsData } from "@/app/data/data";
+import SectionWrapper from "../SectionWrapper";
+import { motion, AnimatePresence } from "framer-motion";
+import { HiChevronDown, HiAcademicCap } from "react-icons/hi2";
 
 function Educations() {
   const [showAll, setShowAll] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const handleShowMore = () => {
-    setIsAnimating(true);
-    setTimeout(() => {
-      setShowAll(true);
-      setIsAnimating(false);
-    }, 300);
-  };
+  const displayedData = showAll ? educationsData : educationsData.slice(0, 2);
 
   return (
-    <>
-      <div className="text-4xl font-bold py-5">Educations</div>
-      <div className="pl-5">
-        {educationsData.map((education, index) => {
-          const isHidden = !showAll && index >= 2;
-          return (
-            <div
-              key={`${education.university}-${index}`}
-              className={`transition-all duration-500 ease-in-out ${
-                isHidden
-                  ? "max-h-0 opacity-0 overflow-hidden"
-                  : "max-h-[500px] opacity-100"
-              }`}
-            >
-              <div className="border-l-4 border-gray-500 pl-5">
-                <div>
-                  {/* University Name */}
-                  <div className={`relative ${index > 0 ? "pt-5" : ""}`}>
-                    <div
-                      className={`bg-gray-900 w-3 h-4 rounded-full absolute -left-7 top-1/2 transform -translate-y-1/2 ${
-                        index > 0 ? " mt-3" : ""
-                      }`}
-                    ></div>
-                    <div className="flex items-center flex-row justify-between">
-                      <h1 className="text-2xl font-bold">
-                        {education.university}
-                      </h1>
-                      <p className="text-medium font-bold text-gray-500">
-                        {education.startDate} - {education.endDate}
-                      </p>
+    <SectionWrapper id="education">
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
+        <h2 className="section-heading">Education</h2>
+
+        <div style={{ position: "relative", paddingLeft: "24px" }}>
+          {/* Vertical line */}
+          <div
+            style={{
+              position: "absolute",
+              left: 0,
+              top: "8px",
+              bottom: "8px",
+              width: "2px",
+              background:
+                "linear-gradient(to bottom, var(--accent-2), var(--accent), transparent)",
+              borderRadius: "2px",
+            }}
+          />
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            {displayedData.map((edu, index) => (
+              <motion.div
+                key={`${edu.university}-${index}`}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                style={{ position: "relative" }}
+              >
+                {/* Timeline dot */}
+                <div
+                  style={{
+                    position: "absolute",
+                    left: "-30px",
+                    top: "20px",
+                    width: "12px",
+                    height: "12px",
+                    borderRadius: "50%",
+                    background: "var(--accent-2)",
+                    border: "2px solid var(--bg-primary)",
+                    boxShadow: "0 0 0 3px var(--accent-glow)",
+                  }}
+                />
+
+                <div className="glass-card" style={{ padding: "24px 28px" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      flexWrap: "wrap",
+                      gap: "8px",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <HiAcademicCap
+                        style={{ color: "var(--accent-2)", fontSize: "1.3rem", flexShrink: 0 }}
+                      />
+                      <h3
+                        style={{
+                          fontSize: "1.1rem",
+                          fontWeight: 700,
+                          color: "var(--text-primary)",
+                        }}
+                      >
+                        {edu.university}
+                      </h3>
                     </div>
+                    <span
+                      style={{
+                        color: "var(--text-muted)",
+                        fontSize: "0.85rem",
+                        fontWeight: 500,
+                      }}
+                    >
+                      {edu.startDate} – {edu.endDate}
+                    </span>
                   </div>
-                  {/* Degree Name */}
-                  <div className="flex items-center flex-row justify-between">
-                    <h1 className="text-medium font-bold text-black">
-                      {education.degree}
-                    </h1>
-                    <p className="text-medium font-bold text-gray-500">
-                      {education.location}
+
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      flexWrap: "wrap",
+                      gap: "6px",
+                    }}
+                  >
+                    <p
+                      style={{
+                        color: "var(--text-secondary)",
+                        fontWeight: 600,
+                        fontSize: "0.9rem",
+                      }}
+                    >
+                      {edu.degree}
+                    </p>
+                    <p style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>
+                      📍 {edu.location}
                     </p>
                   </div>
-                  {/* CGPA/Percentage */}
-                  <div className="flex items-center flex-row justify-between">
-                    <h1 className="text-medium font-bold text-gray-500">
-                      CGPA/Percentage:{" "}
-                      <span className="font-normal text-black">
-                        {education.CGPA_Percentage}
-                      </span>
-                    </h1>
-                  </div>
-                  {/* Passing Year */}
-                  <div className="flex items-center flex-row justify-between">
-                    <h1 className="text-medium font-bold text-gray-500">
-                      Passing Year:{" "}
-                      <span className="font-normal text-black">
-                        {education.passingYear}
-                      </span>
-                    </h1>
+
+                  <div
+                    style={{
+                      marginTop: "10px",
+                      display: "flex",
+                      gap: "20px",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <span style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>
+                      CGPA:{" "}
+                      <strong style={{ color: "var(--accent)" }}>
+                        {edu.CGPA_Percentage}
+                      </strong>
+                    </span>
+                    <span style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>
+                      Passed:{" "}
+                      <strong style={{ color: "var(--text-secondary)" }}>
+                        {edu.passingYear}
+                      </strong>
+                    </span>
                   </div>
                 </div>
-              </div>
-            </div>
-          );
-        })}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Show More */}
+        <AnimatePresence>
+          {!showAll && educationsData.length > 2 && (
+            <motion.div
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0, y: 10 }}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "24px",
+              }}
+            >
+              <button
+                onClick={() => setShowAll(true)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  padding: "10px 24px",
+                  borderRadius: "50px",
+                  border: "1.5px dashed var(--border)",
+                  background: "transparent",
+                  color: "var(--text-secondary)",
+                  cursor: "pointer",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "0.9rem",
+                  fontWeight: 500,
+                  transition: "all 0.2s ease",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--accent)";
+                  (e.currentTarget as HTMLButtonElement).style.color = "var(--accent)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--border)";
+                  (e.currentTarget as HTMLButtonElement).style.color = "var(--text-secondary)";
+                }}
+              >
+                Show More <HiChevronDown />
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-      <div
-        className={`flex justify-center items-center mt-5 transition-all duration-300 ease-in-out ${
-          isAnimating || showAll
-            ? "opacity-0 translate-y-4"
-            : "opacity-100 translate-y-0"
-        }`}
-      >
-        {!showAll && (
-          <button
-            className="border-2 border-gray-500 rounded-full px-2 border-dashed hover:bg-gray-900 hover:text-white transition-all duration-300"
-            onClick={handleShowMore}
-          >
-            Show More
-          </button>
-        )}
-      </div>
-    </>
+    </SectionWrapper>
   );
 }
 
