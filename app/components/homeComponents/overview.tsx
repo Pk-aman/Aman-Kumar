@@ -4,9 +4,9 @@ import { overviewData } from "@/app/data/data";
 import SectionWrapper from "../SectionWrapper";
 
 const stats = [
-  { value: "3+", label: "Years Experience" },
-  { value: "20+", label: "UI Components Built" },
-  { value: "4", label: "Companies" },
+  { value: "2+", label: "Years of Hand's onExperience" },
+  { value: "20+", label: "Development Skills" },
+  { value: "3", label: "Companies" },
 ];
 
 function Overview() {

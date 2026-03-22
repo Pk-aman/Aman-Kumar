@@ -60,24 +60,35 @@ export const experienceData = [
 export const projectsData = [
   {
     name: "Dynamic Pricing Engine",
-    github: "https://github.com/Pk-aman",
+    github: "https://github.com/Pk-aman/Dynamic-Pricing-Engine",
     live: "",
     skills: ["TypeScript", "Node.js", "Express JS", "MongoDB"],
     descriptions: [
-      "Engineered a rule-based Dynamic Pricing System using Node.js (Express) and MongoDB, enabling real-time automated price adjustments based on stock levels, demand scores, and competitor pricing, reducing manual pricing effort by 80%.",
-      "Designed modular backend architecture with separate layers for Controller, Service, and Data Access, implementing RESTful APIs for Product, Market Data, and Rule management; enhanced maintainability using TypeScript and industry-standard patterns.",
-      "Implemented a pricing rule engine and price history tracking module, enabling auditability and analytics for price changes; optimized data retrieval and business logic execution, contributing to faster calculation and decision-making for e-commerce pricing.",
+      "Built a rule-based Dynamic Pricing System with Node.js (Express) and MongoDB, enabling real-time automated price adjustments based on stock levels, demand scores, and competitor pricing — reducing manual effort by 80%.",
+      "Designed a modular backend with separate Controller, Service, and Data Access layers; implemented RESTful APIs for Product, Market Data, and Rule management using TypeScript and industry-standard patterns.",
+      "Developed a pricing rule engine with price history tracking for full auditability; optimized data retrieval and business logic execution for faster e-commerce pricing decisions and analytics.",
     ],
   },
   {
     name: "AI-Mock Test",
-    github: "https://github.com/Pk-aman",
-    live: "",
+    github: "https://github.com/Pk-aman/AI-Test",
+    live: "https://ai-test-rouge-seven.vercel.app/",
     skills: ["Next.js", "Open AI", "Zustand", "Tailwind CSS"],
     descriptions: [
-      "Developed AI-powered mock test platform using Next.js and OpenAI API that dynamically generates unique MCQ assessments tailored to user skills, eliminating static question banks and ensuring 100% unique content per session.",
-      "Built real-time analytics dashboard displaying skill-wise accuracy metrics, question-level answer breakdowns, and detailed performance reports to provide actionable insights for improvement.",
-      "Reduced AI API token consumption by 60% through strategic prompt engineering and structured output formatting, enabling cost-efficient test generation while maintaining high-quality question standards.",
+      "Built an AI-powered mock test platform with Next.js and OpenAI API that dynamically generates unique MCQ assessments per user skill set, eliminating static question banks and ensuring 100% unique content per session.",
+      "Developed a real-time analytics dashboard with skill-wise accuracy metrics, question-level answer breakdowns, and detailed performance reports to provide actionable insights for learner improvement.",
+      "Reduced AI API token consumption by 60% through strategic prompt engineering and structured output formatting, enabling cost-efficient, high-quality test generation at scale.",
+    ],
+  },
+  {
+    name: "AI Powered RFP System",
+    github: "https://github.com/Pk-aman/AI-Powered-RFP-Management-System",
+    live: "",
+    skills: ["Next.js", "Google Gemini AI", "Zustand", "Tailwind CSS", "Mongo DB"],
+    descriptions: [
+      "Built a full-stack AI-Powered RFP Management System automating end-to-end procurement — from AI-assisted RFP creation to automated vendor response analysis — cutting manual effort by 60% for procurement teams.",
+      "Architected with Next.js 14, TypeScript, Node.js/Express, MongoDB, Google Gemini AI for content generation and proposal scoring, and Gmail API + Google Pub/Sub for real-time email automation and webhook handling.",
+      "Delivered AI-structured RFP generation from natural language in under 10 seconds, automated AI grading of vendor responses, and a side-by-side proposal comparison dashboard with AI recommendations — replacing a multi-day manual process.",
     ],
   },
 ];
