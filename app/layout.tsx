@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Providers } from "./components/Providers";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Aman Kumar",
-  description: "Aman Kumar's Portfolio",
+  title: "Aman Kumar — Frontend Engineer",
+  description:
+    "Portfolio of Aman Kumar, a Frontend Software Engineer specializing in React.js, Next.js, TypeScript, and high-performance web applications.",
 };
 
 export default function RootLayout({
@@ -23,18 +16,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-
-        <div className="mt-7">
-          <hr></hr>
-          <div className="flex justify-center p-3">
-            <p>© 2025 Aman Kumar. All rights reserved.</p>
-          </div>
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <Providers>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
